@@ -13,6 +13,13 @@ Next, I needed to teach Jenkins how to build Microsoft .NET solutions. A quick G
 The guide mentions that I should be able to simply search for the MSBuild plugin through the Jenkins UI via Jenkins -> Manage Jenkins -> Manage Plugins -> Available. Lo and behold, my Available Plugins page is empty.
 
 ![Not what I was seeing](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/availableplugins.jpg)
-<center>**Not what I was seeing.**</center>
+**Not what I was seeing.**
+
+That's weird. How am I going to get the MSBuild plugin now? Well, somehow through more Google consultations I found a [directory of all Jenkins plugins](https://updates.jenkins-ci.org/download/plugins/) with a direct download link. Great! I quickly downloaded the latest version of the MSBuild plugin to my local machine, and then installed it through Jenkins -> Manage Jenkins -> Manage Plugins -> Advanced -> Upload Plugin.
+
+Next on the list is Git and GitLab. Through various sources like [this one](http://doc.gitlab.com/ee/integration/jenkins.html) I found out that I require the Git, Git Client, and GitLab Hook plugins. I downloaded these and installed them like I did with MSBuild, and then configured them like so (Jenkins -> Manage Jenkins -> Configure System).
+
+![MSBuild Config](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/msbuildconfig.jpg)
+![Git Config](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/gitconfig.jpg)
 
 

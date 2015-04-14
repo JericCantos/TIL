@@ -13,6 +13,6 @@ Next, I needed to teach Jenkins how to build Microsoft .NET solutions. A quick G
 The guide mentions that I should be able to simply search for the MSBuild plugin through the Jenkins UI via Jenkins -> Manage Jenkins -> Manage Plugins -> Available. Lo and behold, my Available Plugins page is empty.
 
 ![Not what I was seeing](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/availableplugins.jpg)
-**Not what I was seeing.**
+<center>**Not what I was seeing.**</center>
 
 

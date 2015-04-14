@@ -11,7 +11,7 @@ I've been using Visual Studio and GitLab for a while now so my development machi
 
 #Installing Jenkins Plugins
 
-Next, I needed to teach Jenkins how to build Microsoft .NET solutions. A quick Google search led me to this article - [Jenkins for .net in 5 Minutes], (http://justinramel.com/2013/01/15/5-minute-setup/) which informed me that there's already an MSBuild plugin available for Jenkins. Well, it turns out that it doesn't take just five minutes (at least not for me).
+Next, I needed to teach Jenkins how to build Microsoft .NET solutions. A quick Google search led me to this article - [Jenkins for .net in 5 Minutes](http://justinramel.com/2013/01/15/5-minute-setup/) which informed me that there's already an MSBuild plugin available for Jenkins. Well, it turns out that it doesn't take just five minutes (at least not for me).
 
 ##Plugin Woes
 
@@ -29,7 +29,7 @@ Next on the list is Git and GitLab. Through various sources like [this one](http
 
 #First Job Setup 
 
-I was supposedly all set to set up my continuous integration job. Here are the pertinent details I entered then:
+I was supposedly all set to create my continuous integration job. Here are the pertinent details I entered then:
 
 ![Project Details](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/projectbasics.jpg)
 ![Project Git Details](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/projectgit.jpg)
@@ -63,7 +63,7 @@ Around this time I completely removed Jenkins and did a reinstall, thinking I ma
 ![Proxy Config](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/proxyconfig.jpg)
 **Be sure to hit the "Check now" button at the bottom of this page.**
 
-This worked like a charm, and switching to the "Available" tab I was able to search for and install all the necessary plugins I did during my first installation. Unfortunately, though, my builds still met with the exact same error message. At least I know it's no longer just a proxy issue.
+This worked like a charm, and switching to the "Available" tab I was able to search for and install all the necessary plugins I used during my first installation. Unfortunately though, my builds still met with the exact same error message. At least I knew it was no longer just a proxy issue.
 
 ##Jenkins SSH
 My search led me to investigate SSH. If Jenkins wasn't using my machine's proxy by default, then maybe it wasn't using the SSH Key I setup to validate my machine with GitLab. True enough, it seems that Jenkins runs as a different user in Windows (System by default), and so is not able to make use of the key tagged against the currently logged-on user account. There were many guides that detailed how to get around this, like creating a Jenkins user, generating an SSH key for it, and the like, but for the purposes of my POC I didn't want the hassle of maintaining another user account. There must be a quicker way to do this. 
@@ -77,7 +77,7 @@ My persistence in laziness paid off and I was able to find the directory that Je
 
 ![SSH Directory](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/sshdirectory.jpg)
 
-I immediately asked Jenkins to build my project and eagerly awaited the outputs.
+I immediately asked Jenkins to build my project and eagerly awaited the output.
 
 ```
 Started by user anonymous

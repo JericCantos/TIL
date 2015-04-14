@@ -1,3 +1,8 @@
+---
+title: Setting up Jenkins to build .NET Projects from Git Lab.
+tags: [Jenkins] [MSBuild] [GitLab]
+---
+
 Jenkins is currently being used by open source teams in my organization as their Continuous Integration solution. Coming from a Microsoft-centric team, we rely more on MSBuild/TFS Build Server and Visual Studio Release Management to do this for us. I wondered, though, if we could use Jenkins for MS projects instead, which would allow our organization to maybe focus on just one tool and cater to a wide range of projects. My goal was to build a pipeline from Visual Studio going into GitLab for source control and then moving into Jenkins installed on Windows Server 2012 for continuous integration, scheduled builds, and all that jazz. Here's my adventure. [TL;DR](#tldr)
 
 #Installing Jenkins

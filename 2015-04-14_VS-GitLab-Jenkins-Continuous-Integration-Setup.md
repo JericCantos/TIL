@@ -22,4 +22,30 @@ Next on the list is Git and GitLab. Through various sources like [this one](http
 ![MSBuild Config](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/msbuildconfig.jpg)
 ![Git Config](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/gitconfig.jpg)
 
+#First Job Setup 
 
+I was supposedly all set to set up my continuous integration job. Here are the pertinent details I entered then:
+
+![Project Details](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/projectbasics.jpg)
+![Project Git Details](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/projectgit.jpg)
+![Project Build Triggers](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/projectbuildtriggers.jpg)
+![Project MSBuild Configuration](https://github.com/JericCantos/TIL/blob/master/Images/Jenkins-CI/projectmsbuild.jpg)
+
+Hitting "Build" rewarded me with the following output.
+
+```
+Started by user anonymous
+Building in workspace C:\Jenkins\jobs\ContinuousDeliveryPOC\workspace
+Cloning the remote Git repository
+Cloning repository git@absadsivir03.phl.hp.com:cantosj/continuousdeliverypoc.git
+ > C:\Program Files (x86)\Git\cmd\git.exe init C:\Jenkins\jobs\ContinuousDeliveryPOC\workspace # timeout=10
+Fetching upstream changes from git@absadsivir03.phl.hp.com:cantosj/continuousdeliverypoc.git
+ > C:\Program Files (x86)\Git\cmd\git.exe --version # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe -c core.askpass=true fetch --tags --progress git@absadsivir03.phl.hp.com:cantosj/continuousdeliverypoc.git +refs/heads/*:refs/remotes/origin/*
+ERROR: Timeout after 10 minutes
+ERROR: Error cloning remote repo 'origin'
+ERROR: Error cloning remote repo 'origin'
+Finished: FAILURE
+```
+
+Very nice. This problem stumped me for quite a while and Google wasn't quite as helpful. I tried extending the timeout, to changing my machine's proxy. I was able to ping the GitLab server and I was able to fetch, pull, and push changes via GitExtensions but nothing I did allowed Jenkins to do the same.
